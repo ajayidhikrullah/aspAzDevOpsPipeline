@@ -87,3 +87,10 @@ stages:
         appType: 'webApp'
         WebAppName: 'bnkYAML'
         packageForLinux: '$(System.ArtifactsDirectory)/**/OldDadApp.zip'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifcatStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+    
